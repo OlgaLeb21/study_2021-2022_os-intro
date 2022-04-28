@@ -8,21 +8,27 @@ author: "Лебедева Ольга Андреевна"
 lang: ru-RU
 toc-title: "Содержание"
 
+## Bibliography
+bibliography: bib/cite.bib
+csl: pandoc/csl/gost-r-7-0-5-2008-numeric.csl
+
 ## Pdf output format
 toc: true # Table of contents
 toc-depth: 2
+lof: true # List of figures
+lot: true # List of tables
 fontsize: 12pt
 linestretch: 1.5
 papersize: a4
 documentclass: scrreprt
 ## I18n polyglossia
 polyglossia-lang:
-name: russian
-options:
-- spelling=modern
-- babelshorthands=true
+  name: russian
+  options:
+	- spelling=modern
+	- babelshorthands=true
 polyglossia-otherlangs:
-name: english
+  name: english
 ## I18n babel
 babel-lang: russian
 babel-otherlangs: english
@@ -39,12 +45,12 @@ monofontoptions: Scale=MatchLowercase,Scale=0.9
 biblatex: true
 biblio-style: "gost-numeric"
 biblatexoptions:
-- parentracker=true
-- backend=biber
-- hyperref=auto
-- language=auto
-- autolang=other*
-- citestyle=gost-numeric
+  - parentracker=true
+  - backend=biber
+  - hyperref=auto
+  - language=auto
+  - autolang=other*
+  - citestyle=gost-numeric
 ## Pandoc-crossref LaTeX customization
 figureTitle: "Рис."
 tableTitle: "Таблица"
@@ -55,20 +61,20 @@ lolTitle: "Листинги"
 ## Misc options
 indent: true
 header-includes:
-- \usepackage{indentfirst}
-- \usepackage{float} # keep figures where there are in the text
-- \floatplacement{figure}{H} # keep figures where there are in the text
+  - \usepackage{indentfirst}
+  - \usepackage{float} # keep figures where there are in the text
+  - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 
-## Цель работы
+# Цель работы
 – Изучить идеологию и применение средств контроля версий. 
 
 – Освоить умения по работе с git.
 
-## Указания к лабораторной работе 
+# Указания к лабораторной работе 
 Система контроля версий Git представляет собой набор программ командной строки. Доступ к ним можно получить из терминала посредством ввода команды git с различными опциями.
 
-## Последовательность выполнения работы 
+# Последовательность выполнения работы 
 Настройка github 
 
 1. Создайте учётную запись на https://github.com. 
@@ -76,7 +82,7 @@ header-includes:
 
 ![Создание профиля на Гитхаб](image/1.jpg){ #fig:001 width=70% }
 
-## Базовая настройка git 
+# Базовая настройка git 
 – Зададим имя и email владельца репозитория: (рис. [-@fig:002])
 
 git config --global user.name "Name Surname" 
@@ -89,17 +95,15 @@ git config --global user.email "work@mail"
 
 – Зададим имя начальной ветки (будем называть её master):(рис. [-@fig:003])
 
-
 ![Задаём имя ветки и параметры](image/3.jpg){ #fig:003 width=70% }
 
-## Создание ключей ssh
+Создание ключей ssh
 
 Генерируем ключ (рис. [-@fig:004])
 
 gpg --full-generate-key
 
 ![ключ ssh](image/4.jpg){ #fig:004 width=70% }
-
 
 Из предложенных опций выбираем:(рис. [-@fig:005])
  – тип RSA and RSA; 
@@ -119,8 +123,7 @@ gpg --full-generate-key
 
 ![Опции ключа](image/5.jpg){ #fig:005 width=70% }
 
-
-## Добавление PGP ключа в GitHub 
+# Добавление PGP ключа в GitHub 
 
 – Выводим список ключей и копируем отпечаток приватного ключа:(рис. [-@fig:006]) 
 
@@ -128,17 +131,14 @@ gpg --list-secret-keys --keyid-format LONG
 
 ![Вывод ключа](image/6.jpg){ #fig:006 width=70% }
 
-
 Перейдём в настройки GitHub (https://github.com/settings/keys), нажмём на кнопку New GPG key и вставим полученный ключ в поле ввода.(рис. [-@fig:007])
 
 ![Добавление ключа GPG](image/7.jpg){ #fig:007 width=70% }
 
-
-## Создание репозитория
+# Создание репозитория
 Шаблон для рабочего пространства – Репозиторий: https://github.com/yamadharma/course-directory-student-template.(рис. [-@fig:008])
 
 ![Создание репозитория](image/8.jpg){ #fig:008 width=70% }
-
 
 Создание репозитория примет следующий вид: 
 
@@ -146,12 +146,9 @@ mkdir -p ~/work/study/2021-2022/"Операционные системы"
 
 cd ~/work/study/2021-2022/"Операционные системы" 
 
-gh repo create study_2021-2022_os-intro 
-↪ --template=yamadharma/course-directory-student-template –public
+gh repo create study_2021-2022_os-intro --template=yamadharma/course-directory-student-template –public
 
-git clone --recursive 
-↪ git@github.com:/study_2021-2022_os-intro.git os-intro
-
+git clone --recursive git@github.com:/study_2021-2022_os-intro.git os-intro
 
 Команда gh оказалась недоступной для использования, поэтому мы пошли другим путём:(рис. [-@fig:009])
 
@@ -159,19 +156,16 @@ git clone --recursive
 
 ![Копируем ссылку на репозиторий](image/9.jpg){ #fig:009 width=70% }
 
-
 Далее, аналогично ключам GPG впишем ключи SSH:(рис. [-@fig:010])
 
 ![Добавление первых ключей](image/10.jpg){ #fig:010 width=70% }
 
 ![Клонирование файлов в репозитория](image/11.jpg){ #fig:011 width=70% }
 
-
-## Настройка каталога курса
+# Настройка каталога курса
 Перейдем в каталог курса и удалим лишние файлы:(рис. [-@fig:012])
 
 ![Удаление файла](image/12.jpg){ #fig:012 width=70% }
-
 
 Отправим файлы на сервер:(рис. [-@fig:013])
 
@@ -183,11 +177,10 @@ git push
 
 ![Обновление ветки (из-за возникновения ошибки)](image/13.jpg){ #fig:013 width=70% }
 
-
-## Настройка автоматических подписей коммитов git
+# Настройка автоматических подписей коммитов git
  – Используя введёный email, укажем Git применять его при подписи коммитов:(рис. [-@fig:014])  (рис. [-@fig:015])
 
- git config --global user.signingkey 
+git config --global user.signingkey 
 
 git config --global commit.gpgsign true 
 
@@ -197,17 +190,17 @@ git config --global gpg.program $(which gpg2)
 
 ![Отправка файлов в репозиторий ](image/15.jpg){ #fig:015 width=70% }
 
-## Вывод
+# Вывод
 
 – Изучили идеологию и применение средств контроля версий. 
 
 – Освоили умения по работе с git.
 
-## Контрольные вопросы 
+# Контрольные вопросы 
 
 1. Что такое системы контроля версий (VCS) и для решения каких задач они предназначаются? 
 
-Система контроля версий — это система, записывающая изменения в файл или набор файлов в течение времени и позволяющая вернуться позже к определённой версии. Для контроля версий файлов в этой книге в качестве примера будет использоваться исходный код программного обеспечения, хотя на самом деле вы можете использовать контроль версий практически для любых типов файлов.
+Система контроля версий — это система, записывающая изменения в файл или набор файлов в течение времени и позволяющая вернуться позже к определённой версии. Для контроля версий файлов в этой книге в качестве примера будет использоваться исходный код программного обеспечения, хотя на самом деле вы можете использовать контроль версий практически для любых типов файлов.
 
 2. Объясните следующие понятия VCS и их отношения: хранилище, commit, история, рабочая копия. 
 
