@@ -15,7 +15,7 @@ aspectratio: 43
 section-titles: true
 ---
 
-# Текстовой редактор vi
+# Текстовый редактор vi
 
 ## Цель работы
 
