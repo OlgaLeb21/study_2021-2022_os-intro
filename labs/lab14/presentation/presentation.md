@@ -48,41 +48,41 @@ section-titles: true
 
 Сначала мы создали необходимые файлы, записав код через редактор emacs.(рис. [-@fig:001])
 
-![Создание файлов](1.png){ #fig:001 width=70% }
+![Создание файлов](image/1.png){ #fig:001 width=70% }
 
 ## Ход работы
 
 Далее, мы написали код в каждый из файлов. (рис. [-@fig:002]) (рис. [-@fig:003]) (рис. [-@fig:004]) (рис. [-@fig:005]) (рис. [-@fig:006])
 
-![Код файла common.h](2.png){ #fig:002 width=70% }
+![Код файла common.h](image/2.png){ #fig:002 width=70% }
 
 ## Ход работы
 
-![Код файла server.c](3.png){ #fig:003 width=70% }
+![Код файла server.c](image/3.png){ #fig:003 width=70% }
 
 ## Ход работы
 
-![Код файла client.c](4.png){ #fig:004 width=70% }
+![Код файла client.c](image/4.png){ #fig:004 width=70% }
 
 ## Ход работы
 
-![Код Makefile](5.png){ #fig:005 width=70% }
+![Код Makefile](image/5.png){ #fig:005 width=70% }
 
 ## Ход работы
 
-![Код файла client1.c](6.png){ #fig:006 width=70% }
+![Код файла client1.c](image/6.png){ #fig:006 width=70% }
 
 ## Ход работы
 
 Запустили Makefile. (рис. [-@fig:007])
 
-![Запуск Makefile](7.png){ #fig:007 width=70% }
+![Запуск Makefile](image/7.png){ #fig:007 width=70% }
 
 ## Ход работы
 
-Открыли второй терминал. В одном из них запустили server, в другом - client.
+Открыли второй терминал. В одном из них запустили server, в другом - client. (рис. [-@fig:008])
 
-![Запуск Makefile](8.png){ #fig:008 width=70% }
+![Работа программы](image/8.png){ #fig:008 width=70% }
 
 ## Вывод 
 
