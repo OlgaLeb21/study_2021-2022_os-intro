@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 ## Front matter
 lang: ru-RU
